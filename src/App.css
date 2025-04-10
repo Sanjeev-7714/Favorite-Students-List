@@ -1,0 +1,270 @@
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background: linear-gradient(135deg, #00897b 0%, #4caf50 100%);
+}
+
+.app {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+/* Notification */
+.notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 5px;
+  z-index: 100;
+  animation: slide-down 0.3s ease-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes slide-down {
+  0% {
+    top: -50px;
+    opacity: 0;
+  }
+
+  100% {
+    top: 20px;
+    opacity: 1;
+  }
+}
+
+.tabs {
+  display: flex;
+  background-color: #eb6b8a;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.tab {
+  padding: 15px 20px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  flex: 1;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  position: relative;
+}
+
+.tab:hover {
+  background-color: #e05a79;
+  transform: translateY(-2px);
+}
+
+.tab.active {
+  background-color: #d85a78;
+  font-weight: bold;
+}
+
+.tab.active:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+.badge {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #ff3b5c;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.content {
+  background-color: #f5f5f5;
+  padding: 20px;
+  min-height: 300px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.student-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 12px 15px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.student-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.student-name {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.add-button {
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #333;
+  transform: scale(1.05);
+}
+
+.add-button.disabled {
+  background-color: #888;
+  cursor: not-allowed;
+}
+
+.remove-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.remove-button:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+.empty-message {
+  text-align: center;
+  padding: 40px 0;
+  color: #888;
+  font-style: italic;
+}
+
+.footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  padding: 15px;
+  border-top: 1px solid #eee;
+}
+
+.footer p {
+  margin: 3px 0;
+}
+
+/* Animations */
+.pulse {
+  animation: pulse 0.5s ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+    background-color: #f8f8f8;
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.fade-in {
+  animation: fade-in 0.5s ease-in-out;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-out {
+  animation: fade-out 0.3s ease-in-out;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 600px) {
+  .app {
+    padding: 10px;
+  }
+
+  .tab {
+    padding: 12px 10px;
+    font-size: 16px;
+  }
+
+  .content {
+    padding: 15px;
+  }
+
+  .student-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .student-name {
+    margin-bottom: 10px;
+  }
+
+  .add-button,
+  .remove-button {
+    width: 100%;
+    margin-top: 8px;
+  }
+}
